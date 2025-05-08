@@ -15,6 +15,9 @@ public class Board {
     public Board(int size){
         this.size = size;
         this.grid = new ArrayList<>();
+        buildBoard();
+    }    
+    private void buildBoard(){   
         for(int i=0; i<size; i++){
             grid.add(new ArrayList<>());
             for(int j=0; j<size; j++){
@@ -22,11 +25,12 @@ public class Board {
             }
         }
     }
-    public void displayBoard(){
-        for(List<Cell> row:grid){
-            for(Cell cell: row){
-                cell.display();
+    public void display(){
+        for(int i =0; i< size; i++){
+            for(int j =0; j<size; j++){
+                grid.get(i).get(j).display();
             }
+            System.out.println();
         }
     }
     public int getSize() {

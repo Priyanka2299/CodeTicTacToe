@@ -22,9 +22,9 @@ public class Cell {
     }
     
     public void display(){
-        if(symbol == null){
+        if(cellState == CellState.EMPTY){
             System.out.print("| - |");
-        }else{
+        }else if(cellState == CellState.FILLED{
             System.out.print("| - " + symbol.getCharSymbol() + " |");
         }
     }

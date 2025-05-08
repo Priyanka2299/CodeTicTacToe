@@ -13,31 +13,27 @@ import java.util.List;
 public class GameController {
     //private Game game;
     public Game startGame(
-            int dimension,
+            int size,
             List<Player> players,
             List<WinningStrategy> winningStrategies
     ){
-        return Game
-                .getBuilder()
-                .setDimension(dimension)
-                .setPlayers(players)
-                .setWinningStrategies(winningStrategies)
-                .build();
-    }
+        return Game(size, players, winningStrategies);
+                
     public void display(Game game){
         game.display();
     }
     public void makeMove(Game game){
-        
+        game.makeMove();
     }
-    public GameState checkState(Game game){
-        return GameState.IN_PROGRESS;
+    
+    public GameState getGameState(Game game){
+        return game.getGameState();
     }
     public void undo(Game game){
-        
+        game.undo();
     }
     public Player getWinner(Game game){
-        return null;
+        return game.getWinner();
     }
 
 
